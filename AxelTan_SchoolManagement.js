@@ -45,7 +45,7 @@ let nextAssignmentId = 1;
 // Creating a new class on google classroom
 function createClass(className, teacherName){
     const newClass = {
-        id: newClassId++,
+        id: nextClassId++,
         className,
         teacherName,
         joinCode: Math.random().toString(36).substring(2,8),
@@ -56,7 +56,7 @@ function createClass(className, teacherName){
 
 // Function 2
 // Adding a new student's account
-function AddStudent(studentName, email){
+function addStudent(studentName, email){
     if(students.find((s) => s.email === email)){
         return {error: "Email already registered"};
     }
@@ -87,7 +87,9 @@ function enrollStudent(studentId, classId){
     const newEnrollment = {
         enrollmentId: nextEnrollmentId++,
         studentId,
+        studentName: students.studentName,
         classId,
+        className: classes.className,
     };
     enrollments.push(newEnrollment);
     return newEnrollment;
@@ -96,7 +98,7 @@ function enrollStudent(studentId, classId){
 // Function 4
 // Create an assignment for students
 function createAssignment(classId, title, dueDate) {
-    const Class = courses.find((c) => c.id === classId);
+    const Class = classes.find((c) => c.id === classId);
     if (!Class) return {error: "Class Not Found"};
 
     const newAssignment = {
@@ -127,7 +129,7 @@ function getClassList(classId){
 
 module.exports = {
     createClass,
-    AddStudent,
+    addStudent,
     enrollStudent,
     createAssignment,
     getClassList,
