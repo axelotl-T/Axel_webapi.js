@@ -1,12 +1,23 @@
-# Assignment 1
+# Assignment 1: School Management Module
 
-You will only need one file, ie, your node module, for this assignment.
+This Node.js module is a backend simulation designed with reference to **Google Classroom**. It replicates core features such as creating classes with unique join codes, managing student enrollments, and posting assignments.
 
-In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.
+# Setup
 
-You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live preview of the readme file.
+1.  **Prerequisites:** Ensure you have Node.js installed.
+2.  **Installation:** Place the `AxelTan_SchoolManagement.js` file in your project folder.
+3.  **Usage:** Import the module into your main application (e.g., `app.js`) using:
 
-For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+```javascript
+const SchoolManagementModule = require("./AxelTan_SchoolManagement.js");
+```
+
+# Functions
+1. **CreateClass**: Creating a new class on google classroom.
+2. **addStudent**: Adding a new student's account.
+3. **enrollStudent**: Enrolling student into a class.
+4. **createAssignment**: Create an assignment for students.
+5. **getClassList**: Getting the class list
 
 # References
-Provide the references that you have used to support your assignment. 
+**Google Classroom**: https://classroom.google.com/
